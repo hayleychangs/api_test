@@ -5,10 +5,14 @@ import Chart from "../views/Chart";
 let processedData = [];
 
 const BuildChart = () => {
-    const apiUrl = "";
     const jsonUrl = "";
 
+    const [apiUrl, setApiUrl] = useState("");
     const [isLoading, setIsLoading] = useState(true);
+
+    const handleDataChange = (newApiUrl) => {
+        setApiUrl(newApiUrl);
+    };
 
     useEffect (() => {
 
@@ -24,9 +28,8 @@ const BuildChart = () => {
                     high: item.high,
                     low: item.low,
                     volume: item.volume,
-                    amount: (item.amount / 100000000).toFixed(1),
+                    amount: item.amount,
             }));
-            console.log(result);
             return result;
         };
 
@@ -49,7 +52,7 @@ const BuildChart = () => {
             getData();
         };
 
-    }, []);
+    }, [apiUrl]);
 
     if (isLoading) {
         return (
@@ -59,7 +62,7 @@ const BuildChart = () => {
 
     return (
         <div>
-            <Chart processedData={processedData} />
+            <Chart processedData={processedData} onDataChange={handleDataChange} />
         </div>
     )
 };

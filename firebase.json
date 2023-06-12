@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site":"daily-ranking",
+    "site": "daily-ranking",
     "public": "build",
     "ignore": [
       "firebase.json",

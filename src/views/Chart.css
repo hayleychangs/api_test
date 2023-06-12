@@ -29,7 +29,7 @@
     cursor: pointer;
 }
 .singleContent{
-    width: 100%;
+    width: 1250px;
     height: 40px;
     align-items: center;
     display: grid;
@@ -108,14 +108,53 @@
 .rightCol:hover{
     background-color: #f0f0f0;
 }
+.rightCol{
+    overflow-x: auto;
+}
+.rightCol::-webkit-scrollbar {
+    background-color:antiquewhite
+}
+.rightCol::-webkit-scrollbar-thumb {
+    background-color:aqua;
+}
 .dailyStockRanking{
+    width: 1250px;
+    overflow-x: hidden;
     overflow-y: auto;
     max-height: 100vh;
 }
 .dailyStockRanking::-webkit-scrollbar {
     background-color: transparent;
 }
-  
 .dailyStockRanking::-webkit-scrollbar-thumb {
     background-color: transparent;
+}
+.overlay{
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: brightness(60%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+}
+.popUpContainer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 360px;
+    height: 268px;
+    z-index: 1000;
+    background-color: #fff;
+    border-radius: 13px;
+}
+.text{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 32px 0 0 0;
+}
+.noDataText{
+    margin-left: 10px;
 }
